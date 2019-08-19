@@ -18,4 +18,10 @@ public class ProductServiceImpl implements IProductService {
     public List<Product> findAll()throws Exception {
        return dao.findAll();
     }
+
+    @Override
+    public void save(Product product) throws Exception {
+        dao.save(product);
+    }
+
 }

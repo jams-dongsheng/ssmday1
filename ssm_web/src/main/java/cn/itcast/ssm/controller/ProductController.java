@@ -23,4 +23,11 @@ public class ProductController {
         mv.setViewName("product-list");
         return mv;
     }
+    @RequestMapping("/save.do")
+    public ModelAndView save(Product product) throws Exception {
+        service.save(product);
+        ModelAndView mv = new ModelAndView();
+         mv.setViewName("redirect:find.do");
+         return mv;
+    }
 }

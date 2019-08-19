@@ -1,6 +1,7 @@
 package cn.itcast.ssm.domain;
 
 import cn.itcast.ssm.utils.DateUtils;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -9,6 +10,7 @@ public class Product {
     private String productNum;//编号，唯一
     private String productName;//名称
     private String cityName;//出发城市
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date departureTime;//出发时间
     private String departureTimeStr;
     private int productPrice;//价格
@@ -84,11 +86,11 @@ public class Product {
         this.productDesc = productDesc;
     }
 
-    public int getProductStatus() {
+    public Integer getProductStatus() {
         return productStatus;
     }
 
-    public void setProductStatus(int productStatus) {
+    public void setProductStatus(Integer productStatus) {
         this.productStatus = productStatus;
     }
 

@@ -30,6 +30,20 @@
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="datasource"/>
         <property name="typeAliasesPackage" value="cn.itcast.ssm.domain"/>
+<!--配置分页插件-->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <props>
+                            <prop key="helperDialect">oracle</prop>
+                    <!--分页边界界限-->
+                            <prop key="reasonable">true</prop>
+                        </props>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
 <!--获取代理对象mapper-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
